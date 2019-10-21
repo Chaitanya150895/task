@@ -48,6 +48,7 @@ Router::defaultRouteClass(DashedRoute::class);
 Router::prefix('api', function ($routes) {
     $routes->extensions(['json', 'xml']);
     $routes->resources('Users');
+    $routes->resources('Roles');
     Router::connect('/api/users/register', ['controller' => 'Users', 'action' => 'add', 'prefix' => 'api']);    $routes->fallbacks('InflectedRoute');
  });
  

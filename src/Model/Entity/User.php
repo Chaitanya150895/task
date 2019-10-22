@@ -48,7 +48,7 @@ class User extends Entity
         'password'
     ];
 
-    // Code from bake.
+// Code from bake.
 
         // Add this method
         protected function _setPassword($value)

@@ -38,9 +38,12 @@ class UsersController extends AppController
                'sub' => $user['id'],
                'exp' =>  time() + 604800
            ],
-           Security::salt())
+           Security::salt()),
+           'id' =>$user['id'],
        ],
        '_serialize' => ['success', 'data']
    ]);
+
 }
+
 }

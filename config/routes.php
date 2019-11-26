@@ -47,9 +47,15 @@ Router::defaultRouteClass(DashedRoute::class);
 
 Router::prefix('api', function ($routes) {
     $routes->extensions(['json', 'xml']);
+    $routes->resources('Details');
     $routes->resources('Users');
     $routes->resources('Roles');
-    Router::connect('/api/users/register', ['controller' => 'Users', 'action' => 'add', 'prefix' => 'api']);    $routes->fallbacks('InflectedRoute');
+    $routes->resources('Brands');
+    $routes->resources('Products');
+    $routes->resources('Models');
+    $routes->resources('ProductTypes');
+    Router::connect('/api/users/register', ['controller' => 'Users', 'action' => 'add', 'prefix' => 'api']);
+    $routes->fallbacks('InflectedRoute');
  });
  
 

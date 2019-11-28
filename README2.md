@@ -1,32 +1,28 @@
-<!-- To Integrate it to your frontend and fetch data from the Server TuToRial
+To Integrate it to your frontend and fetch data from the Server TuToRial
 
-Create a cakephp project ’menu’
+<!-- 1. Create a cakephp project ’menu’ -->
 
 php composer.phar create-project --prefer-dist cakephp/app menu
  
-Create a database table with the name of ‘items’ and following
+<!-- 2. Create a database table with the name of ‘items’ and following -->
 
-Column name should be id, name, description, cost, created and modified along with primary keys and A I.
+<!-- 3. Column name should be id, name, description, cost, created and modified along with primary keys and A I. -->
 
-Connect database with the project by making changes in default of username = ‘root’, password = ‘’ and database = ‘cake3api_app’ section
+<!-- 4. Connect database with the project by making changes in default of username = ‘root’, password = ‘’ and database = ‘cake3api_app’ section -->
  
-Then run the following command to bake  -->
-
+<!-- 5. Then run the following command to bake   -->
 
 php bin/cake.php bake all items
 
-
-
-<!-- Install CRUD plugin 
-
+<!-- 6. Install CRUD plugin  -->
 
 composer require friendsofcake/crud:^5.2.0
  
-Now load plugin 
+<!-- 7. Now load plugin  -->
  
 bin/cake plugin load Crud
 
-Create a folder named ‘api’ inside controller and file name ‘AppController’ with below code -->
+<!-- 8. Create a folder named ‘api’ inside controller and file name ‘AppController’ with below code  -->
 
 <?php
 namespace App\Controller\Api;
@@ -121,7 +117,7 @@ Router::prefix('api', function ($routes) {
 });
 
 
-<!-- User CORS to allow the access to the data from one domain to the another domain in AppController.php -->
+<!-- 12. User CORS to allow the access to the data from one domain to the another domain in AppController.php -->
 
 public function beforeFilter(Event $event)
    {
@@ -148,7 +144,7 @@ $this->response = $this->response->cors($this->request)
     ->maxAge(300)
     ->build();
  
-<!-- CORS related headers will only be applied to the response if the following criteria are met:
+<!-- 13. CORS related headers will only be applied to the response if the following criteria are met:
 The request has an Origin header.
 The request’s Origin value matches one of the allowed Origin values.
 
